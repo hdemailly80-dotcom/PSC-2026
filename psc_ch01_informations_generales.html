@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mémo PSC · Chapitre 01</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#10151B;--paper:#EFF1EE;--card:#FBFBF9;--line:#D8DBD3;--mark:#FFE55C}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.55 'IBM Plex Sans',system-ui,sans-serif;-webkit-tap-highlight-color:transparent}
+.AC{--c:#6B7280;--s:#EEF0F2}.PR{--c:#2B7CC2;--s:#E6F1FA}.FT{--c:#D9650A;--s:#FDEFE2}
+header{background:var(--ink);color:#EFF1EE;padding:14px 18px;position:sticky;top:0;z-index:5;box-shadow:0 6px 18px rgba(0,0,0,.2)}
+.w{max-width:900px;margin:0 auto}
+.top{display:flex;justify-content:space-between;align-items:flex-end;gap:10px;flex-wrap:wrap}
+.eb{font:600 11px 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#8FA6B8}
+h1{font:700 22px 'Space Grotesk',sans-serif;margin:2px 0 0}
+nav a{font:600 12px 'IBM Plex Mono',monospace;color:#B7C3CC;text-decoration:none;border:1px solid #3A4750;border-radius:8px;padding:6px 10px;margin-left:5px}
+nav a.on{background:#EFF1EE;color:var(--ink)}
+.bar{display:flex;gap:8px;margin-top:11px;flex-wrap:wrap}
+#q{flex:1;min-width:170px;background:#182029;border:1px solid #33404B;color:#fff;border-radius:10px;padding:10px 13px;font:inherit;outline:none}
+.b{background:none;border:1px solid #3A4750;color:#D7DEE2;border-radius:10px;padding:0 13px;font:600 12px 'IBM Plex Mono',monospace;cursor:pointer;min-height:42px}
+.b.on{background:var(--mark);color:var(--ink);border-color:var(--mark)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;max-height:28vh;overflow:auto}
+.chip{display:flex;gap:7px;align-items:center;background:#182029;border:1px solid #33404B;color:#C9D2D8;border-radius:999px;padding:6px 12px 6px 7px;font-size:13px;cursor:pointer;user-select:none}
+.chip i{font:600 10px 'IBM Plex Mono',monospace;font-style:normal;background:var(--c);color:#fff;border-radius:6px;padding:2px 5px}
+.chip.on{background:var(--c);border-color:var(--c);color:#fff}.chip.on i{background:rgba(255,255,255,.28)}
+main{max-width:900px;margin:0 auto;padding:16px 14px 60px}
+.leg{font-size:12.5px;color:#4A545D;margin-bottom:14px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.leg s{display:inline-block;width:11px;height:11px;border-radius:3px;background:var(--c,var(--mark));margin-right:5px;vertical-align:-1px}
+.card{display:flex;background:var(--card);border:1px solid var(--line);border-radius:14px;margin-bottom:16px;overflow:hidden;scroll-margin-top:230px}
+.sp{width:54px;flex:none;background:var(--c);color:#fff;text-align:center;padding-top:14px;font:700 12px 'Space Grotesk',sans-serif;letter-spacing:.05em}
+.sp b{display:block;font-size:20px}
+.cb{flex:1;padding:13px 18px 18px;min-width:0}
+.ref{font:600 11px 'IBM Plex Mono',monospace;color:var(--c);display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.nw{background:var(--mark);color:var(--ink);padding:1px 7px;border-radius:5px}
+h2{font:600 19px 'Space Grotesk',sans-serif;margin:3px 0 8px}
+h3{font:600 12.5px 'IBM Plex Mono',monospace;color:var(--c);background:var(--s);display:inline-block;padding:2px 8px;border-radius:5px;margin:12px 0 4px}
+p{margin:4px 0}ul,ol{margin:3px 0;padding-left:20px}li{margin:2px 0}
+.note{font-size:13px;color:#4A545D;border-left:3px solid var(--line);padding-left:10px}
+a{color:#0E7C7B;word-break:break-all}
+mark{background:var(--mark);color:var(--ink);border-radius:3px;padding:0 1px}
+mark.hit{background:#7FD1AE}
+.ck{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid var(--line);cursor:pointer}
+.ck input{width:22px;height:22px;flex:none;accent-color:var(--c)}
+.ck input:checked+span{text-decoration:line-through;opacity:.5}
+.home{display:grid;gap:7px;margin-top:12px}
+.hi{display:flex;gap:10px;align-items:center;text-align:left;background:var(--s);border:1px solid transparent;border-radius:10px;padding:11px 14px;font-family:inherit;font-size:15px;font-weight:500;color:var(--c);cursor:pointer}
+.hi:hover{border-color:var(--c)}.hi i{font:600 11px 'IBM Plex Mono',monospace;font-style:normal;min-width:38px}
+.hi em{margin-left:auto;font-style:normal;background:var(--mark);color:var(--ink);border-radius:5px;padding:0 6px;font-size:12px}
+.em{text-align:center;color:#4A545D;padding:18px 0 6px}
+body.hl .card:not(.full) .cb{color:#9AA3A9}body.hl .cb h2{color:var(--ink)}
+</style></head><body>
+<header><div class="w">
+<div class="top"><div><div class="eb">RTN PSC · édition juillet 2026</div><h1>Chapitre 01 — Informations générales</h1></div><nav><a href="psc_ch01_informations_generales.html" class="on">01</a><a href="psc_ch02_secourir_une_personne.html">02</a><a href="psc_ch03_formation.html">03</a></nav></div>
+<div class="bar"><input id="q" type="search" placeholder="Rechercher (garrot, sternum, 114…)" autocomplete="off">
+<button class="b" id="all">Tout afficher</button><button class="b" id="none">Tout masquer</button><button class="b" id="star">★ Surlignés</button></div>
+<div class="chips" id="chips"></div></div></header>
+<main><div class="leg"><span class="AC"><s></s>AC apport de connaissances</span><span class="PR"><s></s>PR procédure</span><span class="FT"><s></s>FT technique</span><span><mark>Surligné</mark> = nouveau ou modifié dans l’édition 07-2026</span></div><div id="m"></div></main>
+<script>
+const F=[{"ref": "01AC01", "t": "AC", "n": "01", "title": "Le citoyen de Sécurité Civile", "d": "07-2026", "nw": 0, "hl": true, "html": "<p>Fiche sans enseignement spécifique : <strong>distiller ces messages tout au long de la formation</strong>, au moment opportun.</p><p>Art. L721-1 du CSI : « Toute personne concourt par son comportement à la sécurité civile… »</p><h3>Protection juridique</h3><p>Loi n° 2020-840 du 3 juillet 2020 : qui porte assistance bénévolement à une personne en péril grave et imminent est un <strong>citoyen sauveteur</strong>, collaborateur occasionnel du service public. Protection dans ses actions entreprises <mark>de manière isolée et spontanée</mark>.</p><h3>Messages clés</h3><ul><li><strong>Premier maillon</strong> : le secouriste est la première personne formée à prendre en charge la victime.</li><li><strong>Prévenir</strong> les accidents de la vie courante (enfants &lt; 15 ans, personnes âgées) ; aller au-devant des personnes (fragiles, canicule / grand froid, voisin sans nouvelles) ; attitude empathique.</li><li><strong>Entretenir ses compétences</strong> : toute personne ayant suivi une <mark>sensibilisation</mark> aux gestes qui sauvent (GQS) est invitée à suivre une formation <mark>premiers secours citoyen (PSC),</mark> base du citoyen.</li><li><strong>S’engager</strong> : pompier volontaire, bénévole, réserviste, Service Civique ; donner son sang ; appli de sollicitation citoyenne (Staying Alive, Sauv Life, Permis de Sauver) ; <mark><a href=\"https://www.securite-civile.interieur.gouv.fr/sengager\" target=\"_blank\" rel=\"noopener\">https://www.securite-civile.interieur.gouv.fr/sengager</a></mark></li><li><strong>Ambassadeur</strong> : être « ambassadeur » <mark>des messages</mark> de sécurité civile : partager son expérience, inciter à se former, véhiculer les communications de sécurité civile, partager ses compétences en crise.</li><li><strong>Impact psychologique</strong> (victimes, témoins, intervenants) : se former ; posture (se mettre à sa hauteur, écouter, rassurer, accompagner du regard, respecter l’intimité) ; échanger avec les secours ensuite.</li></ul>"}, {"ref": "01AC02", "t": "AC", "n": "02", "title": "Alerte et protection des populations", "d": "07-2026", "nw": 0, "hl": true, "html": "<h3>Outils d’alerte</h3><ul><li><strong>Sirènes</strong> : SNA (confinement / évacuation) : début = 3 cycles de 1 min 41 s espacés de 5 s ; fin = signal continu 30 s ; essai le 1er mercredi du mois à midi (1 seul cycle de 1 min 41 s).</li><li><strong>Corne de brume</strong> (aménagements hydrauliques) → évacuation. Signal spécifique : risques chimiques, radioactifs, infectieux.</li><li><strong>FR-ALERT</strong> : téléphone allumé, en zone touchée, avec réseau ; actif depuis juin 2022 ; ni inscription ni appli.</li><li>Médias (Radio France, France Télévisions, radios locales, vigilance météo).</li><li>Réseaux sociaux : <mark>X²</mark> (compte @Beauvau_alerte, notifications activées) ; Facebook « Safety Check » ; Google « Posts on Google » ; comptes des services de l’État.</li><li>Panneaux communaux à messages variables ; panneaux routiers, aériens, ferroviaires.</li></ul><p class=\"note\"><mark>² Anciennement Twitter</mark></p><h3>En amont d’une crise</h3><ul><li>S’informer sur les risques (domicile, travail, loisirs) ; préparer un <strong>kit d’urgence</strong> : <mark><a href=\"https://www.georisques.gouv.fr/\" target=\"_blank\" rel=\"noopener\">https://www.georisques.gouv.fr/</a></mark> et <mark><a href=\"https://www.securite-civile.interieur.gouv.fr/reagir/comment-se-preparer-face-aux-risques/plan-individuel-de-mise\" target=\"_blank\" rel=\"noopener\">https://www.securite-civile.interieur.gouv.fr/reagir/comment-se-preparer-face-aux-risques/plan-individuel-de-mise</a></mark></li></ul><h3>Dès le déclenchement</h3><ul><li>Se mettre en sécurité ; ne pas aller chercher les enfants à l’école (protégés par leurs enseignants) ; s’informer ; sauf urgence vitale, ne pas téléphoner (libérer les réseaux).</li><li><strong>Confinement</strong> a minima : fermer portes et fenêtres ; calfeutrer portes, fenêtres, bouches d’aération ; arrêter ventilation / climatisation.</li><li><strong>Évacuation</strong> a minima : emporter le kit d’urgence.</li></ul><h3>Épidémie</h3><ul><li>Se laver les mains / SHA ; tousser dans le coude ; mouchoir à usage unique ; ne pas se toucher le visage ; 1 m de distance ; saluer sans serrer la main ; masque si 1 m impossible.</li></ul>"}, {"ref": "01AC03", "t": "AC", "n": "03", "title": "Protection", "d": "12-2023", "nw": 0, "hl": false, "html": "<ul><li>Supprimer ou écarter le danger <strong>de façon permanente</strong> (si on peut agir sans risque) ; sinon délimiter largement la zone de danger, de façon visible.</li></ul><h3>Dégagement d’urgence</h3><ul><li>Exceptionnel : danger réel, immédiat, non contrôlable. Aucune technique imposée ; cheminement le plus sûr et rapide, seulement si la victime est visible, facile à atteindre.</li></ul><h3>Attaque terroriste / violence</h3><ul><li>CAT : <strong>s’échapper</strong> sans risque → sinon <strong>s’enfermer et se barricader</strong> → une fois caché, <strong>alerter</strong> (où, qui, quoi) → si impossible et vie en danger, <strong>résister</strong>.</li></ul><h3>Épidémie respiratoire</h3><ul><li>Mesures barrières ; victime isolée avec masque (retiré s’il gêne sa ventilation) ; garder ses distances ; la victime réalise les gestes sur elle-même si possible ; masque si approche ; ne pas se toucher le visage ; lavage des mains en fin d’intervention.</li></ul>"}, {"ref": "01AC04", "t": "AC", "n": "04", "title": "Alerte", "d": "07-2026", "nw": 0, "hl": true, "html": "<h3>Numéros gratuits</h3><ul><li><strong>18</strong> sapeurs-pompiers · <strong>15</strong> SAMU · <strong>112</strong> urgences, valable dans toute l’UE.</li><li><strong>114</strong> : <mark>numéro d’urgence unique, national et gratuit, accessible en visio, tchat, images et SMS, en lien direct avec le service d’urgence de proximité. Ce service est réservé aux personne sourdes, sourdaveugles, malentendantes et aphasiques.</mark> Utilisable aussi pour des violences intrafamiliales quand on ne peut pas parler à voix haute.</li></ul><h3>CAT</h3><ul><li>Portable, à défaut fixe ou borne d’appel¹ : transmettre les informations ; répondre aux questions ; appliquer les consignes ; raccrocher sur instruction de l’opérateur.</li></ul><p class=\"note\"><mark>¹ Borne orange géolocalisée présente sur les autoroutes, dans les tunnels et parfois en bord de mer.</mark></p><h3>Informations minimales</h3><ul><li>N° de téléphone (ou de la borne) ; nature du problème ; nombre de victimes si multiples ; localisation la plus précise.</li><li>Alerte déléguée : avant, vérifier que la personne a tous les éléments ; après, vérifier qu’elle l’a faite. Si possible, envoyer quelqu’un accueillir les secours.</li></ul><h3>Cas particulier : suspicion de maladie infectieuse respiratoire</h3><ul><li>Sans détresse vitale : médecin traitant (téléconsultation) + mesures barrières. Difficulté à respirer ou urgence vitale : numéro d’urgence.</li></ul>"}, {"ref": "01AC05", "t": "AC", "n": "05", "title": "Informations générales", "d": "12-2022", "nw": 0, "hl": false, "html": "<h3>Abréviations</h3><ul><li><strong>AVC</strong> accident vasculaire cérébral · <strong>CAT</strong> conduite à tenir · <strong>DAE</strong> défibrillateur automatisé externe · <strong>DEA</strong> défibrillateur entièrement automatisé · <strong>DSA</strong> défibrillateur semi-automatique</li><li><strong>LVA</strong> libération des voies aériennes · <strong>OVA</strong> obstruction des voies aériennes · <strong>PLS</strong> position latérale de sécurité · <strong>RCP</strong> réanimation cardio-pulmonaire · <strong>DGSCGC</strong> Direction Générale de la Sécurité Civile et de la Gestion des Crises</li></ul><h3>Morphologie</h3><ul><li><strong>Adulte</strong> : ressemble à un adulte · <strong>Enfant</strong> : peut tenir sur la cuisse du secouriste · <strong>Nourrisson</strong> : peut tenir sur l’avant-bras du secouriste</li></ul>"}],K='psc01',$=id=>document.getElementById(id);
+let sel=new Set(JSON.parse(localStorage.getItem(K)||'[]')),only=false;
+if(F.length<=2&&!localStorage.getItem(K))F.forEach(f=>sel.add(f.ref));
+F.forEach(f=>{const d=document.createElement('div');d.innerHTML=f.html;f.txt=(f.title+' '+d.textContent).toLowerCase()});
+const save=()=>{try{localStorage.setItem(K,JSON.stringify([...sel]))}catch(e){}};
+function hl(root,q){const re=new RegExp(q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'gi'),w=document.createTreeWalker(root,4),ns=[];
+while(w.nextNode())ns.push(w.currentNode);
+ns.forEach(n=>{if(!re.test(n.nodeValue))return;re.lastIndex=0;const s=document.createElement('span');
+s.innerHTML=n.nodeValue.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(re,m=>'<mark class="hit">'+m+'</mark>');n.replaceWith(s)})}
+function chips(){const c=$('chips');c.innerHTML='';F.forEach(f=>{const e=document.createElement('div');
+e.className='chip '+f.t+(sel.has(f.ref)?' on':'');e.innerHTML='<i>'+f.n+'</i>'+f.title;
+e.onclick=()=>{sel.has(f.ref)?sel.delete(f.ref):sel.add(f.ref);save();chips();draw()};c.appendChild(e)})}
+function open_(f){sel.add(f.ref);save();chips();draw();setTimeout(()=>{const e=$(f.ref);e&&e.scrollIntoView({behavior:'smooth'})},30)}
+function draw(){const q=$('q').value.trim().toLowerCase(),m=$('m');m.innerHTML='';document.body.classList.toggle('hl',only);
+const L=F.filter(f=>sel.has(f.ref)&&(!q||f.txt.includes(q))&&(!only||f.hl));
+if(!L.length){const d=document.createElement('div');d.className='em';
+d.textContent=sel.size?'Aucun résultat dans les fiches affichées.':'Touchez une fiche ci-dessus ou ci-dessous.';m.appendChild(d);
+if(!sel.size){const h=document.createElement('div');h.className='home';
+F.filter(f=>!only||f.hl).forEach(f=>{const b=document.createElement('button');b.className='hi '+f.t;
+b.innerHTML='<i>'+f.n+'</i><span>'+f.title+'</span>'+(f.hl?'<em>★</em>':'');b.onclick=()=>open_(f);h.appendChild(b)});m.appendChild(h)}return}
+L.forEach(f=>{const c=document.createElement('div');c.className='card '+f.t+(f.nw?' full':'');c.id=f.ref;
+c.innerHTML='<div class="sp">'+f.t+'<b>'+f.n.replace(/^[A-Z]+/,'')+'</b></div><div class="cb"><div class="ref">'+f.ref+' · '+f.d+(f.nw?'<span class="nw">NOUVEAU / ENTIÈREMENT MODIFIÉ</span>':'')+'</div><h2>'+f.title+'</h2>'+f.html+'</div>';
+m.appendChild(c);if(q)hl(c,q);
+c.querySelectorAll('input').forEach((i,k)=>{const key=K+f.ref+k;try{i.checked=localStorage.getItem(key)=='1'}catch(e){}
+i.onchange=()=>{try{localStorage.setItem(key,i.checked?'1':'0')}catch(e){}}})})}
+$('q').oninput=draw;
+$('all').onclick=()=>{F.forEach(f=>sel.add(f.ref));save();chips();draw()};
+$('none').onclick=()=>{sel.clear();save();chips();draw()};
+$('star').onclick=()=>{only=!only;$('star').classList.toggle('on',only);draw()};
+chips();draw();
+</script></body></html>

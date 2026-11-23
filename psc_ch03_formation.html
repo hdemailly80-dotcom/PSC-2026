@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Mémo PSC · Chapitre 03</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#10151B;--paper:#EFF1EE;--card:#FBFBF9;--line:#D8DBD3;--mark:#FFE55C}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:15px/1.55 'IBM Plex Sans',system-ui,sans-serif;-webkit-tap-highlight-color:transparent}
+.AC{--c:#6B7280;--s:#EEF0F2}.PR{--c:#2B7CC2;--s:#E6F1FA}.FT{--c:#D9650A;--s:#FDEFE2}
+header{background:var(--ink);color:#EFF1EE;padding:14px 18px;position:sticky;top:0;z-index:5;box-shadow:0 6px 18px rgba(0,0,0,.2)}
+.w{max-width:900px;margin:0 auto}
+.top{display:flex;justify-content:space-between;align-items:flex-end;gap:10px;flex-wrap:wrap}
+.eb{font:600 11px 'IBM Plex Mono',monospace;letter-spacing:.12em;text-transform:uppercase;color:#8FA6B8}
+h1{font:700 22px 'Space Grotesk',sans-serif;margin:2px 0 0}
+nav a{font:600 12px 'IBM Plex Mono',monospace;color:#B7C3CC;text-decoration:none;border:1px solid #3A4750;border-radius:8px;padding:6px 10px;margin-left:5px}
+nav a.on{background:#EFF1EE;color:var(--ink)}
+.bar{display:flex;gap:8px;margin-top:11px;flex-wrap:wrap}
+#q{flex:1;min-width:170px;background:#182029;border:1px solid #33404B;color:#fff;border-radius:10px;padding:10px 13px;font:inherit;outline:none}
+.b{background:none;border:1px solid #3A4750;color:#D7DEE2;border-radius:10px;padding:0 13px;font:600 12px 'IBM Plex Mono',monospace;cursor:pointer;min-height:42px}
+.b.on{background:var(--mark);color:var(--ink);border-color:var(--mark)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;max-height:28vh;overflow:auto}
+.chip{display:flex;gap:7px;align-items:center;background:#182029;border:1px solid #33404B;color:#C9D2D8;border-radius:999px;padding:6px 12px 6px 7px;font-size:13px;cursor:pointer;user-select:none}
+.chip i{font:600 10px 'IBM Plex Mono',monospace;font-style:normal;background:var(--c);color:#fff;border-radius:6px;padding:2px 5px}
+.chip.on{background:var(--c);border-color:var(--c);color:#fff}.chip.on i{background:rgba(255,255,255,.28)}
+main{max-width:900px;margin:0 auto;padding:16px 14px 60px}
+.leg{font-size:12.5px;color:#4A545D;margin-bottom:14px;display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.leg s{display:inline-block;width:11px;height:11px;border-radius:3px;background:var(--c,var(--mark));margin-right:5px;vertical-align:-1px}
+.card{display:flex;background:var(--card);border:1px solid var(--line);border-radius:14px;margin-bottom:16px;overflow:hidden;scroll-margin-top:230px}
+.sp{width:54px;flex:none;background:var(--c);color:#fff;text-align:center;padding-top:14px;font:700 12px 'Space Grotesk',sans-serif;letter-spacing:.05em}
+.sp b{display:block;font-size:20px}
+.cb{flex:1;padding:13px 18px 18px;min-width:0}
+.ref{font:600 11px 'IBM Plex Mono',monospace;color:var(--c);display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.nw{background:var(--mark);color:var(--ink);padding:1px 7px;border-radius:5px}
+h2{font:600 19px 'Space Grotesk',sans-serif;margin:3px 0 8px}
+h3{font:600 12.5px 'IBM Plex Mono',monospace;color:var(--c);background:var(--s);display:inline-block;padding:2px 8px;border-radius:5px;margin:12px 0 4px}
+p{margin:4px 0}ul,ol{margin:3px 0;padding-left:20px}li{margin:2px 0}
+.note{font-size:13px;color:#4A545D;border-left:3px solid var(--line);padding-left:10px}
+a{color:#0E7C7B;word-break:break-all}
+mark{background:var(--mark);color:var(--ink);border-radius:3px;padding:0 1px}
+mark.hit{background:#7FD1AE}
+.ck{display:flex;gap:10px;align-items:flex-start;padding:8px 0;border-bottom:1px solid var(--line);cursor:pointer}
+.ck input{width:22px;height:22px;flex:none;accent-color:var(--c)}
+.ck input:checked+span{text-decoration:line-through;opacity:.5}
+.home{display:grid;gap:7px;margin-top:12px}
+.hi{display:flex;gap:10px;align-items:center;text-align:left;background:var(--s);border:1px solid transparent;border-radius:10px;padding:11px 14px;font-family:inherit;font-size:15px;font-weight:500;color:var(--c);cursor:pointer}
+.hi:hover{border-color:var(--c)}.hi i{font:600 11px 'IBM Plex Mono',monospace;font-style:normal;min-width:38px}
+.hi em{margin-left:auto;font-style:normal;background:var(--mark);color:var(--ink);border-radius:5px;padding:0 6px;font-size:12px}
+.em{text-align:center;color:#4A545D;padding:18px 0 6px}
+body.hl .card:not(.full) .cb{color:#9AA3A9}body.hl .cb h2{color:var(--ink)}
+</style></head><body>
+<header><div class="w">
+<div class="top"><div><div class="eb">RTN PSC · édition juillet 2026</div><h1>Chapitre 03 — Formation</h1></div><nav><a href="psc_ch01_informations_generales.html">01</a><a href="psc_ch02_secourir_une_personne.html">02</a><a href="psc_ch03_formation.html" class="on">03</a></nav></div>
+<div class="bar"><input id="q" type="search" placeholder="Rechercher (garrot, sternum, 114…)" autocomplete="off">
+<button class="b" id="all">Tout afficher</button><button class="b" id="none">Tout masquer</button><button class="b" id="star">★ Surlignés</button></div>
+<div class="chips" id="chips"></div></div></header>
+<main><div class="leg"><span class="AC"><s></s>AC apport de connaissances</span><span class="PR"><s></s>PR procédure</span><span class="FT"><s></s>FT technique</span><span><mark>Surligné</mark> = nouveau ou modifié dans l’édition 07-2026</span></div><div id="m"></div></main>
+<script>
+const F=[{"ref": "00AC00", "t": "AC", "n": "PRÉF", "title": "Préface · à l’attention du formateur", "d": "07-2026", "nw": 0, "hl": false, "html": "<ul><li>Pendant les cas simulés, inviter le secouriste à énoncer <strong>ce qui aurait pu éviter l’accident</strong> ou sa répétition.</li><li>Proposer à l’apprenant de se munir, en citoyen formé, de <strong>matériel de fortune</strong> : protection buccale ; gants ou sac plastique ; épaisseur de tissu ; lien large ; matériel pour garrot (ou garrot industriel).</li><li>Les fiches sont classées selon « <strong>ce qui tue en premier</strong> ». Les RTN sont susceptibles de produire des effets de droit dans l’examen des responsabilités.</li></ul>"}, {"ref": "03AC01", "t": "AC", "n": "01", "title": "Obligations pour les formations", "d": "07-2026", "nw": 1, "hl": true, "html": "<h3>Conditions minimales d’accueil</h3><label class=\"ck\"><input type=\"checkbox\"><span>Lieu spacieux : min. 2 m² par personne</span></label><label class=\"ck\"><input type=\"checkbox\"><span>Chaises en quantité suffisante</span></label><label class=\"ck\"><input type=\"checkbox\"><span>Protection des contraintes climatiques (abrité de la pluie et du vent, chauffé ou climatisé)</span></label><label class=\"ck\"><input type=\"checkbox\"><span>Toilettes et point d’eau à proximité</span></label><p class=\"note\">Public en situation de handicap : lieu conforme aux règles d’accessibilité et d’accueil.</p><h3>Matériel obligatoire (2 à 10 apprenants)</h3><label class=\"ck\"><input type=\"checkbox\"><span>Références techniques nationales PSC — <strong>1</strong></span></label><label class=\"ck\"><input type=\"checkbox\"><span>Référentiel interne de formation et de certification (RIFC) de l’organisme — <strong>1</strong></span></label><label class=\"ck\"><input type=\"checkbox\"><span>Matériel pour pansements compressifs improvisés — <strong>EQS</strong></span></label><label class=\"ck\"><input type=\"checkbox\"><span>Matériel pour garrots improvisés — <strong>EQS</strong></span></label><label class=\"ck\"><input type=\"checkbox\"><span>Matériel de simulation (factices ou neutralisés), maquillages, fausses plaies — <strong>EQS</strong></span></label><label class=\"ck\"><input type=\"checkbox\"><span>1 téléphone fixe ou mobile neutralisé</span></label><label class=\"ck\"><input type=\"checkbox\"><span>Mannequin RCP adulte (avec poumons) — <strong>1</strong></span></label><label class=\"ck\"><input type=\"checkbox\"><span>Mannequin RCP enfant (avec poumons) — <strong>1</strong></span></label><label class=\"ck\"><input type=\"checkbox\"><span>Mannequin RCP nourrisson (avec poumons) — <strong>1</strong></span></label><label class=\"ck\"><input type=\"checkbox\"><span>Maquette de coupe de tête — <strong>1</strong></span></label><label class=\"ck\"><input type=\"checkbox\"><span>DAE de formation*, électrodes adultes et enfant (ou dispositif d’adaptation) et accessoires — <strong>1</strong></span></label><label class=\"ck\"><input type=\"checkbox\"><span>Tout autre matériel pédagogique ou technique imposé par l’organisme — <strong>EQS</strong></span></label><label class=\"ck\"><input type=\"checkbox\"><span>Feuille de présence — <strong>1</strong></span></label><label class=\"ck\"><input type=\"checkbox\"><span>Fiches d’évaluation — <strong>EQS</strong></span></label><label class=\"ck\"><input type=\"checkbox\"><span>Fiche de certification — <strong>EQS</strong></span></label><label class=\"ck\"><input type=\"checkbox\"><span>Produits d’entretien et d’hygiène — <strong>EQS</strong></span></label><p class=\"note\">EQS : en quantité suffisante pour tous les apprenants, pour la durée de la formation, selon les techniques pédagogiques imposées. * Matériels opérants, avec leurs moyens d’alimentation (câble, batteries, chargeur).</p>"}],K='psc03',$=id=>document.getElementById(id);
+let sel=new Set(JSON.parse(localStorage.getItem(K)||'[]')),only=false;
+if(F.length<=2&&!localStorage.getItem(K))F.forEach(f=>sel.add(f.ref));
+F.forEach(f=>{const d=document.createElement('div');d.innerHTML=f.html;f.txt=(f.title+' '+d.textContent).toLowerCase()});
+const save=()=>{try{localStorage.setItem(K,JSON.stringify([...sel]))}catch(e){}};
+function hl(root,q){const re=new RegExp(q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&'),'gi'),w=document.createTreeWalker(root,4),ns=[];
+while(w.nextNode())ns.push(w.currentNode);
+ns.forEach(n=>{if(!re.test(n.nodeValue))return;re.lastIndex=0;const s=document.createElement('span');
+s.innerHTML=n.nodeValue.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(re,m=>'<mark class="hit">'+m+'</mark>');n.replaceWith(s)})}
+function chips(){const c=$('chips');c.innerHTML='';F.forEach(f=>{const e=document.createElement('div');
+e.className='chip '+f.t+(sel.has(f.ref)?' on':'');e.innerHTML='<i>'+f.n+'</i>'+f.title;
+e.onclick=()=>{sel.has(f.ref)?sel.delete(f.ref):sel.add(f.ref);save();chips();draw()};c.appendChild(e)})}
+function open_(f){sel.add(f.ref);save();chips();draw();setTimeout(()=>{const e=$(f.ref);e&&e.scrollIntoView({behavior:'smooth'})},30)}
+function draw(){const q=$('q').value.trim().toLowerCase(),m=$('m');m.innerHTML='';document.body.classList.toggle('hl',only);
+const L=F.filter(f=>sel.has(f.ref)&&(!q||f.txt.includes(q))&&(!only||f.hl));
+if(!L.length){const d=document.createElement('div');d.className='em';
+d.textContent=sel.size?'Aucun résultat dans les fiches affichées.':'Touchez une fiche ci-dessus ou ci-dessous.';m.appendChild(d);
+if(!sel.size){const h=document.createElement('div');h.className='home';
+F.filter(f=>!only||f.hl).forEach(f=>{const b=document.createElement('button');b.className='hi '+f.t;
+b.innerHTML='<i>'+f.n+'</i><span>'+f.title+'</span>'+(f.hl?'<em>★</em>':'');b.onclick=()=>open_(f);h.appendChild(b)});m.appendChild(h)}return}
+L.forEach(f=>{const c=document.createElement('div');c.className='card '+f.t+(f.nw?' full':'');c.id=f.ref;
+c.innerHTML='<div class="sp">'+f.t+'<b>'+f.n.replace(/^[A-Z]+/,'')+'</b></div><div class="cb"><div class="ref">'+f.ref+' · '+f.d+(f.nw?'<span class="nw">NOUVEAU / ENTIÈREMENT MODIFIÉ</span>':'')+'</div><h2>'+f.title+'</h2>'+f.html+'</div>';
+m.appendChild(c);if(q)hl(c,q);
+c.querySelectorAll('input').forEach((i,k)=>{const key=K+f.ref+k;try{i.checked=localStorage.getItem(key)=='1'}catch(e){}
+i.onchange=()=>{try{localStorage.setItem(key,i.checked?'1':'0')}catch(e){}}})})}
+$('q').oninput=draw;
+$('all').onclick=()=>{F.forEach(f=>sel.add(f.ref));save();chips();draw()};
+$('none').onclick=()=>{sel.clear();save();chips();draw()};
+$('star').onclick=()=>{only=!only;$('star').classList.toggle('on',only);draw()};
+chips();draw();
+</script></body></html>
